@@ -1,4 +1,4 @@
-Projeto desenvolvido por:
+Projeto desenvolvido por:<br/>
 Nicolas Carmo Kamikado - RA: 4201021 <br/>
 Felipe Rogério Sant'Ana Rodrigues - RA: 4201063 <br/>
 
