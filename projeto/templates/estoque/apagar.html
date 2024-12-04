@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+    <p>Deseja apagar este produto?</p>
+    <button type="submit">Apagar</button>
+</form>
+<h2>{{ page.nome }}</h2>
+<div>{{ page.descricao | linebreaksbr }}</div>
+<br>
+<div>Quantidade Atual: {{ page.quantidade}}</div>
+<br>
+{% if page.foto %}
+<img src="{{ page.foto.url }}"  width="100">
+<br>
+{% endif %}
+<div>{{ page.data }}</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+{% if lista %}
+<table>
+    <tr>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Data de aquisição</th>
+    </tr>
+    {% for page in lista %}
+    <tr>
+        <td>
+            {% if page.foto %}
+            <img src="{{ page.foto.url }}" alt="{{ page.nome }}" width="40">
+            {% else %}
+            <span>Sem imagem</span>
+            {% endif %}
+        </td>
+        <td><a href="{% url 'estoque:detalhes' page.id %}">{{ page.nome }}</a></td>
+        <td>{{ page.quantidade }}</td>
+        <td>{{ page.data }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<div>Não existem produtos criados.</div>
+{% endif %}
+
+{% endblock %}

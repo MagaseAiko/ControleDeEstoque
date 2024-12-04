@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+<div class="menu-container">
+    <a href="{% url 'estoque:criar_pagina' %}" class="menu-link">Cadastrar Produto</a>
+    <a href="{% url 'estoque:lista' %}" class="menu-link">Produtos em Estoque</a>
+    <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button id="btn_sair" type="submit" >Sair</button>
+    </form>
+</div>
+<div id='clock'></div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+<div class="product-card">
+    <h2>{{ page.nome }}</h2>
+    <div class="description">{{ page.descricao | linebreaksbr }}</div>
+    <br>
+    <div class="quantity">Quantidade Atual: {{ page.quantidade}}</div>
+    <br>
+    {% if page.foto %}
+    <img class="product-image" src="{{ page.foto.url }}" width="100">
+    <br>
+    {% endif %}
+    <div class="date">{{ page.data }}</div>
+    <div class="actions">
+        <a href="{% url 'estoque:editar' page.id %}" class="btn btn-edit">Editar</a>
+        <a href="{% url 'estoque:apagar' page.id %}" class="btn btn-delete">Apagar</a>
+    </div>
+</div>
+{% endblock %}
